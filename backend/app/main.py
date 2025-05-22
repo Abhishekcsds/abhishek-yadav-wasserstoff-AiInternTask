@@ -108,34 +108,31 @@
 #             return FileResponse(target_file)
 #         return FileResponse(build_dir / "index.html")
 
+
+
+
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, Response
 from pathlib import Path
-import os
 
+# Import your API router
 from app.api.routes import router as api_router
 
-app = FastAPI(title="Document Research Chatbot with Groq LLM")
+app = FastAPI()
 
-# CORS settings
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Change or extend origins in production
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Include backend API routes under /api
-app.include_router(api_router, prefix="/api")
-
-# Path to React build folder (backend/build)
 build_dir = Path(__file__).resolve().parent.parent / "build"
 
+print(f"build_dir resolved to: {build_dir}")
+print(f"Does build_dir exist? {build_dir.exists()}")
+print(f"Does index.html exist? {(build_dir / 'index.html').exists()}")
+if build_dir.exists():
+    print(f"Contents of build_dir: {[p.name for p in build_dir.iterdir()]}")
+
+# Mount your API router under /api prefix
+app.include_router(api_router, prefix="/api")
+
 if build_dir.exists() and (build_dir / "index.html").exists():
-    # Mount static files (JS, CSS, images, etc.) served from /static
     app.mount("/static", StaticFiles(directory=build_dir / "static"), name="static")
 
     @app.get("/", include_in_schema=False)
@@ -148,8 +145,8 @@ if build_dir.exists() and (build_dir / "index.html").exists():
         if target_file.exists() and target_file.is_file():
             return FileResponse(target_file)
         return FileResponse(build_dir / "index.html")
+
 else:
-    # If build directory is missing, return a simple message on root
     @app.get("/", include_in_schema=False)
     async def missing_build():
         return Response(
