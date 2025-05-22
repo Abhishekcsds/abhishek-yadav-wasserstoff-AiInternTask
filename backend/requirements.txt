@@ -1,16 +1,44 @@
+# fastapi
+# uvicorn
+# pytesseract
+# pillow
+# aiofiles
+# python-multipart
+# PyMuPDF
+# langchain
+# chromadb
+# groq
+# openai  # Optional fallback
+# tiktoken
+# langchain-groq
+# langchain-community>=0.0.25
+# sentence-transformers>=2.2.2
+# langchain-huggingface>=0.0.8
+
+
 fastapi
 uvicorn
+
+# File handling & image processing
 pytesseract
 pillow
 aiofiles
 python-multipart
 PyMuPDF
+
+# LangChain & LLM integrations
 langchain
-chromadb
-groq
-openai  # Optional fallback
-tiktoken
 langchain-groq
 langchain-community>=0.0.25
-sentence-transformers>=2.2.2
 langchain-huggingface>=0.0.8
+openai  # Optional fallback
+
+# Embeddings & tokenization
+sentence-transformers>=2.2.2
+tiktoken
+
+# Vector database
+chromadb
+
+# Optional logging/UX
+tqdm
