@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-core
+langchain-groq
+chromadb
+pydantic
+python-dotenv
+pytesseract
+pillow

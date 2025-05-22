@@ -1,0 +1,18 @@
+# OS and editor junk
+.DS_Store
+.vscode/
+*.log
+
+# Python
+*.pyc
+__pycache__/
+venv/
+.env
+
+# Node
+node_modules/
+.env
+
+# Build/Dist
+dist/
+build/
