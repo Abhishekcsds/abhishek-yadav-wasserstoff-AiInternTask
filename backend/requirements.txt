@@ -1,11 +1,16 @@
 fastapi
 uvicorn
-langchain
-langchain-community
-langchain-core
-langchain-groq
-chromadb
-pydantic
-python-dotenv
 pytesseract
 pillow
+aiofiles
+python-multipart
+PyMuPDF
+langchain
+chromadb
+groq
+openai  # Optional fallback
+tiktoken
+langchain-groq
+langchain-community>=0.0.25
+sentence-transformers>=2.2.2
+langchain-huggingface>=0.0.8
