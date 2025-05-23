@@ -1,5 +1,3 @@
-# backend/run.py
-
 import os
 import uvicorn
 
