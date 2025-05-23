@@ -14,7 +14,7 @@ services:
     name: document-research-chatbot
     env: python
     buildCommand: pip install -r backend/requirements.txt
-    startCommand: python backend/run.py
+    startCommand: python run.py
     plan: free
     envVars:
       - key: PYTHON_VERSION
