@@ -17,7 +17,7 @@
 
 
 fastapi
-uvicorn
+uvicorn[standard]
 
 # File handling & image processing
 pytesseract
