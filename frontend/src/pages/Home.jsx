@@ -10,7 +10,8 @@ const Home = () => {
 
   // Function to fetch documents from backend API
   const fetchDocuments = () => {
-    fetch('http://localhost:8000/api/documents/list')
+    fetch('/api/documents/list')
+
       .then(res => res.json())
       .then(data => setDocuments(data))
       .catch(err => {

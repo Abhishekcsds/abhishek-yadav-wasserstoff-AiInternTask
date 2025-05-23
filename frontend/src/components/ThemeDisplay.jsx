@@ -19,7 +19,7 @@ const ThemeDisplay = () => {
   useEffect(() => {
     async function fetchDocuments() {
       try {
-        const response = await axios.get('http://localhost:8000/api/documents/list');
+        const response = await axios.get('/api/documents/list');
         // Extract just filenames to keep it simple
         setUploadedDocs(response.data.map(doc => doc.filename));
       } catch (err) {
@@ -59,7 +59,7 @@ const ThemeDisplay = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/themes/', {
+      const response = await axios.post('/api/themes/', {
         documents: selectedDocs,
       });
 

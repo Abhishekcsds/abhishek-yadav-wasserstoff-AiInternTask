@@ -24,7 +24,7 @@ const UploadForm = ({ onUploadSuccess }) => {
       setLoading(true);
       setProgress(0);
 
-      await axios.post('http://localhost:8000/api/upload/', formData, {
+      await axios.post('/api/upload/', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
         onUploadProgress: (progressEvent) => {
           const percentCompleted = Math.round(

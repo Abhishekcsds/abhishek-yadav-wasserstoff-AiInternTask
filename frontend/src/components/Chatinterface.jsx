@@ -251,7 +251,7 @@ const Chatinterface = () => {
   useEffect(() => {
     const fetchDocuments = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/documents/list');
+        const res = await axios.get('/api/documents/list');
         const docs = res.data || [];
         setDocuments(docs);
         if (docs.length > 0) setSelectedDoc(docs[0].filename);
@@ -297,7 +297,7 @@ const Chatinterface = () => {
     setResponses([]);
 
     try {
-      const res = await axios.post('http://localhost:8000/api/query/', {
+      const res = await axios.post('/api/query/', {
         query,
         doc_id: selectedDoc,
       });

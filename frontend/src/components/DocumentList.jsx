@@ -30,10 +30,10 @@ const DocumentList = ({ documents, selectedDocumentId, onSelectDocument, onDocum
 
     try {
       // Call API to delete the document by filename (encoded for URL safety)
-      await axios.delete(`http://localhost:8000/api/documents/delete/${encodeURIComponent(filename)}`);
+      await axios.delete(`/api/documents/delete/${encodeURIComponent(filename)}`);
 
       // After deletion, fetch the updated list of documents
-      const response = await axios.get('http://localhost:8000/api/documents/list');
+      const response = await axios.get('/api/documents/list');
 
       // Map the returned documents to include an 'id' field for React keys, using filename
       const updatedDocs = response.data.map(doc => ({
