@@ -28,6 +28,9 @@ import os
 import uvicorn
 from pathlib import Path
 
+#sys.path.append(str(Path(__file__).resolve().parent / "app"))
+
+
 if __name__ == "__main__":
     # Render provides PORT as an environment variable
     port = int(os.environ.get("PORT", 8000))  # default to 8000 locally

@@ -133,7 +133,7 @@ from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 from app.core.config import settings
-from app.services.groq_embedding import get_groq_embeddings
+from app.services.groq_embeddings import get_groq_embeddings
 
 # Ensure the vector DB directory exists
 os.makedirs(settings.CHROMA_DB_DIR, exist_ok=True)
