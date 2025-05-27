@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UploadForm from '../components/UploadForm.jsx';
 import DocumentList from '../components/DocumentList.jsx';
-import Chatinterface from '../components/Chatinterface.jsx';
+//import Chatinterface from '../components/Chatinterface.jsx';
 import ThemeDisplay from '../components/ThemeDisplay.jsx';
 
 const Home = () => {
@@ -44,8 +44,8 @@ const Home = () => {
       {/* Show overall theme display */}
       <ThemeDisplay />
 
-      {/* Chat interface related to selected document */}
-      <Chatinterface selectedDocumentId={selectedDocumentId} />
+      {/* Chat interface related to selected document 
+      <Chatinterface selectedDocumentId={selectedDocumentId} /> */}
 
     </div>
   );
